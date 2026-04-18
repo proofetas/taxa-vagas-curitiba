@@ -1,0 +1,528 @@
+:root {
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --secondary: #2ecc71;
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+    --gray: #95a5a6;
+    --background: #f8f9fa;
+    --text: #333;
+    --card-bg: #ffffff;
+    --border: #ddd;
+}
+
+.dark-mode {
+    --background: #121212;
+    --text: #f8f9fa;
+    --card-bg: #1e1e1e;
+    --gray: #555;
+    --border: #444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    max-width: 450px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.screen {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 90px;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.logo-icon {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    color: white;
+    font-size: 32px;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.logo p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.login-form, 
+.signup-form,
+#profile-form,
+#new-job-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea, select {
+    padding: 12px 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--card-bg);
+    color: var(--text);
+    width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.signup-link, .login-link {
+    text-align: center;
+    color: var(--gray);
+    margin-top: 10px;
+}
+
+.signup-link a, .login-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+header h2 {
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+header h2 span {
+    color: var(--primary);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.icon-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#job-search {
+    flex: 1;
+    padding: 12px 15px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--card-bg);
+    padding: 12px 10px;
+    border-radius: 12px;
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 450px;
+    box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
+    z-index: 100;
+    border: 1px solid var(--border);
+}
+
+.nav-btn {
+    border: none;
+    background: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    transition: color 0.2s;
+    border-radius: 8px;
+}
+
+.nav-btn i {
+    font-size: 20px;
+}
+
+.nav-btn.active {
+    color: var(--primary);
+    font-weight: 500;
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.content {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    display: none;
+}
+
+.content h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.jobs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.job-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--border);
+}
+
+.job-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.job-card h4 {
+    margin-bottom: 5px;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.job-card p {
+    color: var(--text);
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+.btn-view {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-view:hover {
+    background: var(--primary-dark);
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-pic-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-pic-container span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 8px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.profile-pic-container:hover span {
+    opacity: 1;
+}
+
+#profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary);
+    display: block;
+    background: var(--card-bg);
+}
+
+label {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 5px;
+    display: block;
+    font-size: 0.95rem;
+}
+
+#cv-upload {
+    padding: 15px;
+    border: 2px dashed var(--border);
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--card-bg);
+}
+
+#cv-upload:hover {
+    border-color: var(--primary);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    border: 1px solid var(--border);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--gray);
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--text);
+}
+
+.modal-content h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.modal-content p {
+    margin: 10px 0;
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.modal-content strong {
+    color: var(--primary);
+    min-width: 100px;
+    display: inline-block;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.btn-favorite, .btn-apply {
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    flex: 1;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-favorite {
+    background: none;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-favorite:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-apply {
+    background: linear-gradient(135deg, var(--secondary), #27ae60);
+    border: none;
+    color: white;
+}
+
+.btn-apply:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+.toast {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--secondary), #27ae60);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    z-index: 1000;
+    display: none;
+    animation: fadeInUp 0.3s ease-out;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    min-width: 250px;
+    text-align: center;
+}
+
+.toast i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .menu {
+        padding: 10px 5px;
+        bottom: 10px;
+    }
+    
+    .nav-btn {
+        padding: 6px;
+        font-size: 11px;
+    }
+    
+    .nav-btn i {
+        font-size: 18px;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+    
+    .modal-content {
+        padding: 20px;
+    }
+}
+
+/* Animações */
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
